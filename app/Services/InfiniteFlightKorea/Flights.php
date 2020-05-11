@@ -14,9 +14,6 @@ class Flights {
 
     public function getIFKFlights()
     {
-        $CACHE_KEY = 'INFINITE_FLIGHT_KOREA_FLIGHTS';
-        if (\Cache::has($CACHE_KEY)) return \Cache::get($CACHE_KEY);
-
         $sessions = $this->live->getAllSessions();
         $flights = [];
         foreach ($sessions as $session) {
@@ -28,7 +25,6 @@ class Flights {
             }
         }
 
-        \Cache::put($CACHE_KEY, $flights, 60);
         return $flights;
     }
 }

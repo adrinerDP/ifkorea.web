@@ -14,9 +14,6 @@ class Frequencies {
 
     public function getRKRRFrequencies()
     {
-        $CACHE_KEY = 'INFINITE_FLIGHT_KOREA_ATCS';
-        if (\Cache::has($CACHE_KEY)) return \Cache::get($CACHE_KEY);
-
         $sessions = $this->live->getAllSessions();
         $atcs = [];
         foreach ($sessions as $session) {
@@ -28,7 +25,6 @@ class Frequencies {
             }
         }
 
-        \Cache::put($CACHE_KEY, $atcs, 60);
         return $atcs;
     }
 }

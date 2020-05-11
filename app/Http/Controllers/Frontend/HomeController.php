@@ -9,19 +9,21 @@ use App\Services\InfiniteFlightKorea\Frequencies;
 
 class HomeController extends Controller
 {
-    public function index(Live $live, Flights $flights, Frequencies $frequencies)
+    public function index()
     {
-        if (\Cache::has('HOME')) {
-            $data = \Cache::get('HOME');
-        } else {
-            $data = [
+        return view('home');
+    }
+
+    public function asyncHomeData(Live $live, Flights $flights, Frequencies $frequencies)
+    {
+        return response()->json([
+            'servers' => view('components.home_servers', [
                 'sessions' => $live->getAllSessions(),
+            ])->render(),
+            'players' => view('components.home_players', [
                 'flights' => $flights->getIFKFlights(),
                 'atcs' => $frequencies->getRKRRFrequencies(),
-            ];
-            \Cache::put('HOME', $data, 1800);
-        }
-
-        return view('home', $data);
+            ])->render()
+        ]);
     }
 }

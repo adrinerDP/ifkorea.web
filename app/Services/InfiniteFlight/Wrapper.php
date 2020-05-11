@@ -51,9 +51,6 @@ class Wrapper
      */
     public function getFlights(string $sessionId, bool $positionOnly = false)
     {
-        $CACHE_KEY = 'INFINITE_FLIGHT_LIVE_API_FLIGHTS_'. strtoupper($sessionId) . '_' . strtoupper((string) $positionOnly);
-        if (Cache::has($CACHE_KEY)) return Cache::get($CACHE_KEY);
-
         $response = $this->client->request('GET', 'Flights.aspx', [
             'query' => [
                 'apikey' => config('ifkorea.api.key'),
@@ -63,7 +60,6 @@ class Wrapper
         ]);
         $result = json_decode($response->getBody()->getContents());
 
-        Cache::put($CACHE_KEY, $result, 30);
         return $result;
     }
 
@@ -74,10 +70,6 @@ class Wrapper
      */
     public function getFlightDetails(string $flightId)
     {
-        $CACHE_KEY = 'INFINITE_FLIGHT_LIVE_API_FLIGHT_DETAIL' . strtoupper($flightId);
-
-        if (Cache::has($CACHE_KEY)) return Cache::get($CACHE_KEY);
-
         $response = $this->client->request('GET', 'FlightDetails.aspx', [
             'query' => [
                 'apikey' => config('ifkorea.api.key'),
@@ -86,7 +78,6 @@ class Wrapper
         ]);
         $result = json_decode($response->getBody()->getContents());
 
-        Cache::put($CACHE_KEY, $result, 30);
         return $result;
     }
 
@@ -97,9 +88,6 @@ class Wrapper
      */
     public function getATCFacilities(string $sessionId)
     {
-        $CACHE_KEY = 'INFINITE_FLIGHT_LIVE_API_ATC_'. strtoupper($sessionId);
-        if (Cache::has($CACHE_KEY)) return Cache::get($CACHE_KEY);
-
         $response = $this->client->request('GET', 'GetATCFacilities.aspx', [
             'query' => [
                 'apikey' => config('ifkorea.api.key'),
@@ -108,7 +96,6 @@ class Wrapper
         ]);
         $result = json_decode($response->getBody()->getContents());
 
-        Cache::put($CACHE_KEY, $result, 30);
         return $result;
     }
 
@@ -138,9 +125,6 @@ class Wrapper
      */
     public function getFlightPlans(string $sessionId)
     {
-        $CACHE_KEY = 'INFINITE_FLIGHT_FPLS_'. strtoupper($sessionId);
-        if (Cache::has($CACHE_KEY)) return Cache::get($CACHE_KEY);
-
         $response = $this->client->request('GET', 'GetFlightPlans.aspx', [
             'query' => [
                 'apikey' => config('ifkorea.api.key'),
@@ -149,7 +133,6 @@ class Wrapper
         ]);
         $result = json_decode($response->getBody()->getContents());
 
-        Cache::put($CACHE_KEY, $result, 30);
         return $result;
     }
 
