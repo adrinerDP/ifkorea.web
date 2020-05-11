@@ -1,8 +1,8 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark py-2 shadow">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('images/ifk_logo.png') }}">
-            <span>IF KOREA</span>
+            <img src="{{ asset('images/ifkorea_designs/symbol_white.png') }}" style="width:auto;margin-right:0.25rem">
+            <span>인플코리아</span>
         </a>
         <div class="togglers">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_user">
