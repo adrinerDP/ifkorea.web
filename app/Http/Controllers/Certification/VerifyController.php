@@ -54,7 +54,7 @@ class VerifyController extends Controller {
 
         $searchedToken->user->if_uuid = $flight->UserID;
         $searchedToken->user->certificated_at = Carbon::now();
-        $searchedToken->save();
+        $searchedToken->user->save();
 
         return response()->json(['code' => 200]);
     }
