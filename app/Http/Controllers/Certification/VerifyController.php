@@ -51,10 +51,10 @@ class VerifyController extends Controller {
         if (is_null($flight)) return response()->json(['code' => 404]);
 
         $token->expireToken($searchedToken);
-        $searchedToken->user->update([
-            'if_uuid' => $flight->UserID,
-            'certificated_at' => Carbon::now(),
-        ]);
+
+        $searchedToken->user->if_uuid = $flight->UserID;
+        $searchedToken->user->certificated_at = Carbon::now();
+        $searchedToken->save();
 
         return response()->json(['code' => 200]);
     }
