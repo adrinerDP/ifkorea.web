@@ -34,7 +34,7 @@
             <ul class="navbar-nav ml-auto">
                 @auth
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('profile') }}" class="nav-link">
                             <img src="{{ auth()->user()->avatar }}" class="profile-image">
                             {{ auth()->user()->nickname }}
                         </a>

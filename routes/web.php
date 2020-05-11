@@ -28,4 +28,5 @@ Route::group([
     'namespace' => 'Frontend'
 ], function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('me', 'ProfileController@index')->name('profile');
 });
