@@ -16,13 +16,13 @@
         <div class="collapse navbar-collapse" id="nav_menu">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-dashboard fa-fw"></i> VA 상황판</a>
+                    <a class="nav-link" href="javascript:alert('오픈준비중입니다.');"><i class="fa fa-dashboard fa-fw"></i> VA 상황판</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-search fa-fw"></i> VA 노선 검색</a>
+                    <a class="nav-link" href="javascript:alert('오픈준비중입니다.');"><i class="fa fa-search fa-fw"></i> VA 노선 검색</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-list-alt fa-fw"></i> 항로 아카이브</a>
+                    <a class="nav-link" href="javascript:alert('오픈준비중입니다.');"><i class="fa fa-list-alt fa-fw"></i> 항로 아카이브</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('cert.home') }}"><i class="fa fa-check-circle-o fa-fw"></i> 인증센터</a>
