@@ -9,6 +9,13 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166096618-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-166096618-1');
+    </script>
     @yield('resources')
 </head>
 <body>
