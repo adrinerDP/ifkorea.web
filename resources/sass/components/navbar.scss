@@ -1,0 +1,17 @@
+.navbar {
+    background: #2E3440;
+    .navbar-brand {
+        font-weight: 700;
+        img {
+            height: 2rem;
+            width: 2.4rem;
+            vertical-align: bottom;
+        }
+    }
+    .profile-image {
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100%;
+        margin: -5px 5px -5px 0;
+    }
+}

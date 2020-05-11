@@ -1,0 +1,11 @@
+body {
+    padding-top: 6rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
