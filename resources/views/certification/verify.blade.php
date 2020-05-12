@@ -25,7 +25,7 @@
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-5">
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-check-circle-o"></i> Live 인증
             </div>

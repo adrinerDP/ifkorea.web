@@ -5,7 +5,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-5">
-            <div class="card">
+            <div class="card mb-3">
                 <div class="card-header">
                     <i class="fa fa-check-circle-o"></i> IF KOREA {{ $title }} 인증서
                 </div>
