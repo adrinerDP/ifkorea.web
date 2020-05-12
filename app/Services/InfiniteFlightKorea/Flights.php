@@ -7,11 +7,19 @@ use App\Services\InfiniteFlight\Live;
 class Flights {
     private Live $live;
 
+    /**
+     * Flights constructor.
+     * @param Live $live
+     */
     public function __construct(Live $live)
     {
         $this->live = $live;
     }
 
+    /**
+     * Returns IFK players in all sessions.
+     * @return array
+     */
     public function getIFKFlights()
     {
         $sessions = $this->live->getAllSessions();

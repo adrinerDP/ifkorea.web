@@ -136,6 +136,11 @@ class Wrapper
         return $result;
     }
 
+    /**
+     * Get frequency type name from type code.
+     * @param int $freq_type
+     * @return string
+     */
     public static function getFrequencyType(int $freq_type)
     {
         return config('ifkorea.freq_types')[$freq_type];

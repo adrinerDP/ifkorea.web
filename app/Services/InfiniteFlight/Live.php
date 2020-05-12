@@ -11,6 +11,10 @@ namespace App\Services\InfiniteFlight;
 class Live {
     private Wrapper $wrapper;
 
+    /**
+     * Live constructor.
+     * @param Wrapper $wrapper
+     */
     public function __construct(Wrapper $wrapper)
     {
         $this->wrapper = $wrapper;

@@ -7,11 +7,19 @@ use App\Services\InfiniteFlight\Live;
 class Frequencies {
     private Live $live;
 
+    /**
+     * Frequencies constructor.
+     * @param Live $live
+     */
     public function __construct(Live $live)
     {
         $this->live = $live;
     }
 
+    /**
+     * Returns RKRR atc frequencies in all sessions.
+     * @return array
+     */
     public function getRKRRFrequencies()
     {
         $sessions = $this->live->getAllSessions();
