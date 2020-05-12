@@ -14,6 +14,7 @@ class User extends Authenticatable
         'name',
         'nickname',
         'avatar',
+        'sns_id',
         'sns_type',
     ];
 

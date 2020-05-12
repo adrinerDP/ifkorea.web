@@ -27,6 +27,7 @@ class NaverController extends Controller
         }
 
         $user = User::updateOrCreate([
+            'sns_id' => $user->getId(),
             'name' => $user->getName(),
             'nickname' => $user->getNickName(),
             'email' => $user->getEmail(),

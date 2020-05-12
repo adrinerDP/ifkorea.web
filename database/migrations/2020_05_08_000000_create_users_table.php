@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('nickname');
             $table->string('email')->unique();
             $table->string('avatar');
+            $table->integer('sns_id');
             $table->string('sns_type');
             $table->boolean('admin')->default(FALSE);
             $table->uuid('if_uuid')->nullable();
