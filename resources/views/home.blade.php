@@ -117,23 +117,23 @@
     </h4>
     <section id="server_info">
         <div class="card card-body mb-3 text-center">
-            <i class="fa fa-cog fa-spin fa-2x d-block mb-2"></i>
-            <h4 class="font-weight-bold text-muted">
-                서버 정보를 가져오는 중입니다
+            <h4 class="font-weight-bold text-muted m-0">
+                <i class="fa fa-circle-notch fa-spin"></i>
+                서버 정보를 가져오는 중입니다.
             </h4>
         </div>
         <div class="card card-body mb-3 text-center">
-            <i class="fa fa-cog fa-spin fa-2x d-block mb-2"></i>
-            <h4 class="font-weight-bold text-muted">
-                파일럿 정보를 가져오는 중입니다
+            <h4 class="font-weight-bold text-muted m-0">
+                <i class="fa fa-circle-notch fa-spin"></i>
+                파일럿 정보를 가져오는 중입니다.
             </h4>
         </div>
     </section>
     <section id="FIR_info">
         <div class="card card-body mb-3 text-center">
-            <i class="fa fa-cog fa-spin fa-2x d-block mb-2"></i>
-            <h4 class="font-weight-bold text-muted">
-                관제석 정보를 가져오는 중입니다
+            <h4 class="font-weight-bold text-muted m-0">
+                <i class="fa fa-circle-notch fa-spin"></i>
+                관제석 정보를 가져오는 중입니다.
             </h4>
         </div>
     </section>
