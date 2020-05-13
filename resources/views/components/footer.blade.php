@@ -1,6 +1,6 @@
 <footer>
     <div class="container">
-        <p class="comment">Made with ❤️ by {{ config('app.name') }}</p>
+        <img class="logo" src="{{ asset('images/ifkorea_designs/signiture_kor_long_horizontal_color.png') }}">
         <p class="support">
             커뮤니티 문의: <a href="mailto:support@infinite-flight.kr">support@infinite-flight.kr</a> |
             웹서비스 문의: <a href="mailto:me@adrinerdp.co">me@adrinerdp.co</a>
