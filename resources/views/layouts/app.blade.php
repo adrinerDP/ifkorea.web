@@ -18,6 +18,7 @@
     @yield('meta')
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-kopubworld@1.0">
     <script src="{{ asset('js/app.js') }}"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166096618-1"></script>
     <script>
