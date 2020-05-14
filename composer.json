@@ -15,6 +15,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
+        "maatwebsite/excel": "^3.1",
+        "phpoffice/phpspreadsheet": "^1.12",
         "socialiteproviders/naver": "^3.2"
     },
     "require-dev": {
