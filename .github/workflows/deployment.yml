@@ -29,10 +29,19 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: deploy ftp
-        uses: SamKirkland/FTP-Deploy-Action@3.1.0
+      - name: deploy via ssh
+        uses: garygrossgarten/github-action-ssh@release
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          git-ftp-args: --insecure
+          command: |
+            ${{ secrets.SSH_DRIVE }}
+            cd ${{ secrets.SSH_FILEPATH }}
+            php artisan down --message="서비스 업데이트 중입니다." --retry="10"
+            git pull
+            php artisan migrate
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            php artisan up
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          passphrase: ${{ secrets.SSH_PASSWORD }}
