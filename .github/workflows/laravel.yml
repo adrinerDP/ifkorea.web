@@ -1,0 +1,22 @@
+name: Deployment
+
+on: [push]
+
+jobs:
+  laravel-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: 1. Set Environment Variables
+      run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
+    - name: 2. Install Composer Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+    - name: 3. Generate Application key
+      run: php artisan key:generate
+    - name: 4. Create Database Schemes
+      run: |
+        mkdir -p database
+        touch database/database.sqlite
+        php artisan migrate
+    - name: 5. Execute PHPUnit
+      run: vendor/bin/phpunit
