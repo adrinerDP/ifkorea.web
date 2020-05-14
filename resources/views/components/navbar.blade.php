@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('images/ifkorea_designs/symbol_white.png') }}" style="width:auto;margin-right:0.25rem">
-            <span>인플코리아</span>
+            <span>{{ config('app.name') }}</span>
         </a>
         <div class="togglers">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_user">
