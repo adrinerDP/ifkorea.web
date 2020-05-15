@@ -1,12 +1,9 @@
-name: Deployment
+name: Test
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -22,9 +19,5 @@ jobs:
       run: php artisan key:generate
     - name: 5. Create Database Schemes
       run: php artisan migrate
-    - name: 6. Install SSH key
-      uses: webfactory/ssh-agent@v0.2.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_KEY }}
-    - name: 7. Deploy
-      run: php artisan deploy
+    - name: 6. Execute PHPUnit
+      run: vendor/bin/phpunit
