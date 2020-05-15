@@ -14,11 +14,15 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
     - name: 2. Install Composer Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-    - name: 3. Generate Application key
+    - name: 3. Create SQLite
+      run: |
+        mkdir -p database
+        touch database/database.sqlite
+    - name: 4. Generate Application key
       run: php artisan key:generate
-    - name: 4. Install SSH key
+    - name: 5. Install SSH key
       uses: webfactory/ssh-agent@v0.2.0
       with:
         ssh-private-key: ${{ secrets.SSH_KEY }}
-    - name: 5. Deploy
+    - name: 6. Deploy
       run: php artisan deploy
