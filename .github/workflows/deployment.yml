@@ -21,9 +21,11 @@ jobs:
     - name: 4. Generate Application key
       run: php artisan key:generate
     - name: 5. Install SSH key
-      uses: kielabokkie/ssh-key-and-known-hosts-action@v1
-      with:
-        ssh-private-key: ${{ secrets.SSH_KEY }}
-        ssh-host: ko-1.adrinerdp.co
+      run: |
+        mkdir -p $HOME/.ssh/
+        chmod 700 $HOME/.ssh/
+        echo -n "${{ secrets.SSH_KEY }}" | base64 --decode > $HOME/.ssh/id_rsa
+        chmod 600 $HOME/.ssh/id_rsa
+        stat $HOME/.ssh/id_rsa
     - name: 6. Deploy
       run: php artisan deploy

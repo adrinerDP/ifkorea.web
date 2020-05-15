@@ -112,7 +112,7 @@ return [
     */
 
     'hosts' => [
-        'ko-1.adrinerdp.co' => [
+        'infinite-flight.kr' => [
             'deploy_path' => '/var/www/infinite-flight.kr',
             'user' => 'junsu_lee',
         ],
