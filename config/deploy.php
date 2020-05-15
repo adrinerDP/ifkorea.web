@@ -115,6 +115,13 @@ return [
         'infinite-flight.kr' => [
             'deploy_path' => '/var/www/infinite-flight.kr',
             'user' => 'junsu_lee',
+            'identityFile' => '~/.ssh/id_rsa',
+            'forwardAgent' => true,
+            'multiplexing' => true,
+            'sshOptions'   => [
+                'UserKnownHostsFile' => '/dev/null',
+                'StrictHostKeyChecking' => 'no',
+            ],
         ],
     ],
 
