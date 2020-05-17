@@ -7,7 +7,7 @@ Route::group([
     'prefix' => 'auth'
 ], function () {
     Route::get('login', 'ActionsController@showLoginForm')->name('auth.login');
-    Route::get('logout', 'ActionsController@logout')->name('auth.logout');
+    Route::any('logout', 'ActionsController@logout')->name('auth.logout');
     Route::get('naver/redirect', 'NaverController@redirectToProvider')->name('auth.naver.redirect');
     Route::get('naver/callback', 'NaverController@handleProviderCallback')->name('auth.naver.callback');
 });
@@ -22,6 +22,14 @@ Route::group([
     Route::get('issue/activity', 'PaperController@issueActivityCertification')->name('cert.paper.activity');
     Route::get('issue/grade', 'PaperController@issueGradeCertification')->name('cert.paper.grade');
     Route::get('issue/ifatc', 'PaperController@issueIFATCCertification')->name('cert.paper.ifatc');
+});
+
+Route::group([
+    'namespace' => 'Admin',
+    'prefix' => 'admin',
+    'middleware' => ['logged.in', 'admin'],
+], function () {
+    Route::get('/', 'DashboardController@showDashboard')->name('admin.dashboard');
 });
 
 Route::group([

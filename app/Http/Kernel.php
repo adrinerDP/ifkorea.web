@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'logged.in' => \App\Http\Middleware\CheckLoggedIn::class,
         'logged.out' => \App\Http\Middleware\CheckLoggedOut::class,
         'certificated' => \App\Http\Middleware\CheckCertificated::class,
+        'admin' => \App\Http\Middleware\CheckAdmin::class,
     ];
 }
