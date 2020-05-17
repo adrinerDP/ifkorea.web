@@ -19,6 +19,7 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
+        'certificated_at' => 'datetime',
         'admin' => 'boolean'
     ];
 

@@ -16,7 +16,7 @@ return [
 
     'title' => '인플코리아 관리자',
     'title_prefix' => '',
-    'title_postfix' => '',
+    'title_postfix' => ' :: ' . env('APP_NAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -211,49 +211,49 @@ return [
         '1. 사용자 관리',
         [
             'text' => '전체 사용자 목록',
-            'url'  => '#',
+            'route'  => 'admin.users.index',
             'icon' => 'fa fa-fw fa-users',
         ],
         [
-            'text' => '재제 내역 관리',
-            'url'  => '#',
+            'text' => '제재 내역 관리',
+            'route'  => 'home',
             'icon' => 'fa fa-fw fa-user-shield',
         ],
         [
             'text' => '관리자 권한 관리',
-            'url'  => '#',
+            'route'  => 'home',
             'icon' => 'fa fa-fw fa-user-cog',
         ],
         '2. 데이터 관리',
         [
             'text' => '공항 목록 조회/변경',
-            'url'  => '#',
+            'route'  => 'home',
             'icon' => 'fa fa-fw fa-map-marker-alt',
         ],
         [
             'text' => '가상항공사 목록 조회/변경',
-            'url'  => '#',
+            'route'  => 'home',
             'icon' => 'fa fa-fw fa-plane-departure',
         ],
         [
             'text' => '운항 노선 조회/변경',
-            'url'  => '#',
+            'route'  => 'home',
             'icon' => 'fa fa-fw fa-route',
         ],
         [
             'text' => '항로 아카이브',
-            'url'  => '#',
+            'route'  => 'home',
             'icon' => 'fa fa-fw fa-list-alt',
         ],
         '3. 푸시 알림',
         [
             'text' => '이메일 단체 발송',
-            'url'  => '#',
+            'route'  => 'home',
             'icon' => 'fa fa-fw fa-envelope',
         ],
         [
             'text' => '오픈채팅방 공지 전송',
-            'url'  => '#',
+            'route'  => 'home',
             'icon' => 'fa fa-fw fa-comments',
         ],
     ],
@@ -300,17 +300,17 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],
@@ -321,12 +321,12 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
                 ],
             ],

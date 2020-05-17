@@ -30,6 +30,8 @@ Route::group([
     'middleware' => ['logged.in', 'admin'],
 ], function () {
     Route::get('/', 'DashboardController@showDashboard')->name('admin.dashboard');
+
+    Route::get('users', 'UserController@showAllUsers')->name('admin.users.index');
 });
 
 Route::group([
