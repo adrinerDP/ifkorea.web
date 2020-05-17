@@ -41,7 +41,7 @@
                     </li>
                     @if(auth()->user()->admin)
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('admin.dashboard') }}" class="nav-link">
                                 <i class="fa fa-cog fa-fw"></i> 관리
                             </a>
                         </li>

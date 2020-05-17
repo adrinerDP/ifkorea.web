@@ -26,4 +26,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Verify');
     }
+
+    public function adminlte_image()
+    {
+        return $this->getAttribute('avatar');
+    }
 }

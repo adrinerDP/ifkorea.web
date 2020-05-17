@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Airport;
-use App\Services\Aquila\ImportRoutes;
+use App\Services\Aquila\Import;
 use Illuminate\Console\Command;
 
 class ImportAirports extends Command
@@ -12,13 +12,13 @@ class ImportAirports extends Command
 
     protected $description = 'Import Airport database from OpenFlights.org';
 
-    protected ImportRoutes $import;
+    protected Import $import;
 
     /**
      * ImportAirports constructor.
-     * @param ImportRoutes $import
+     * @param Import $import
      */
-    public function __construct(ImportRoutes $import)
+    public function __construct(Import $import)
     {
         parent::__construct();
         $this->import = $import;
@@ -32,7 +32,7 @@ class ImportAirports extends Command
     {
         if (Airport::count() > 0 &&  $this->confirm('Confirm overwrite airports database?')) {
             Airport::truncate();
-            return $this->import->fromOpenFlights();
+            return $this->import->airportsFromOpenFlights();
         } else {
             return false;
         }
