@@ -17,4 +17,9 @@ class Airport extends Model
         'altitude',
         'tz_offset'
     ];
+
+    public function scopeICAO($query, $icao)
+    {
+        return $query->where('icao', $icao);
+    }
 }
